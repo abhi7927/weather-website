@@ -7,6 +7,7 @@ const forecast = require('./utils/forecast')  // code for getting weather foreca
 
 const app = express()       //initializing express
 
+const port = process.env.PORT || 3000
 const viewsPath = path.join(__dirname, '../templates/views')  //directory to hbs views
 const publicDirPath = path.join(__dirname, '../public')       //consists of static html, css, js
 const partialsPath = path.join(__dirname, '../templates/partials')//Handlebars allows for template reuse through partials.
@@ -94,6 +95,6 @@ app.get('*',(req, res)=>{
 
 //Binds and listens for connections on the specified host and port.
 //This method is identical to Node’s http.Server.listen().
-app.listen(port=3000, '192.168.1.11', ()=>{
-    console.log('Server is running!')
+app.listen(port, ()=>{
+    console.log('Server is running! at '+port)
 })

@@ -12,7 +12,7 @@ weatherForm.addEventListener('submit',(e)=>{
     //used to asynchronously make api request to the web server, which then sends json object
     //response is then recieved which then makes a callback
     //the response is json which can be used to make asynchronous calls
-    fetch('http://192.168.1.11:3000/weather?address=' + location).then((response)=>{
+    fetch('/weather?address=' + location).then((response)=>{  //http://192.168.1.11:3000/weather?address=' + location for local machine 
         response.json().then((data)=>{
             if(data.error){
                 messageOne.textContent = data.error
