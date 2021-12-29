@@ -39,7 +39,7 @@ app.get('/help',(req, res)=>{
     res.render('help', {
         title:'Help',
         name: 'Abhishek Anavekar',
-        helpMessage: 'This is help page'
+        helpMessage: 'All temperatures are in degree Celsius.'
     })
 })
 

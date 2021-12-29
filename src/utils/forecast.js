@@ -8,7 +8,12 @@ const forecast = (latitude, longitude, callback)=>{
         } else if(response.body.success===false) {
             callback('Please provide valid address', undefined)
         } else{
-            const data = response.body.current.weather_descriptions + '. It is currently '+ response.body.current.temperature+ ' degrees out. There is '+ response.body.current.precip*100 + '% chances of rain.'
+            const data = response.body.current.weather_descriptions +
+             '. It is currently '+ response.body.current.temperature+
+              ' degrees out. There is '+ response.body.current.precip*100 +
+               '% chances of rain.' + 
+               ' It feels like ' + response.body.current.feelslike + ' degrees.' + 
+               ' The humidity is ' + response.body.current.humidity + '.'
             callback(undefined, data)
         }
     })
